@@ -31,6 +31,7 @@ Then clone it. On your new repo's page, click the green **Code** button and copy
 In the folder where you keep your CSCI 1030U labs:
 
 ```
+cd C:\Users\faree\Documents\mylab
 git clone https://github.com/elfareedusman-byte/lab05-csci1030u
 cd lab05-csci10130u
 ```
