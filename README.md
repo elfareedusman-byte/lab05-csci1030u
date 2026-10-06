@@ -31,8 +31,8 @@ Then clone it. On your new repo's page, click the green **Code** button and copy
 In the folder where you keep your CSCI 1030U labs:
 
 ```
-git clone https://github.com/CSCI1030U/lab05-your-username
-cd lab05-your-username
+git clone https://github.com/elfareedusman-byte/lab04-csci1030u
+cd lab05-csci10130u
 ```
 
 Two small data files, `sample.txt` and `people.csv`, are included so you can try your
