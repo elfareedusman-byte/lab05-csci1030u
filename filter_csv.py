@@ -8,21 +8,23 @@
 import argparse
 import csv
 
-
 def main():
-    parser = argparse.ArgumentParser(
-        description="Print the rows of a CSV where a column has a given value.")
-    parser.add_argument("filename", help="the CSV file to read")
-    parser.add_argument("column", help="the name of the column to match on")
-    parser.add_argument("value", help="the value to match")
+    parser = argparse.ArgumentParser(description="Filter CSV rows by column value")
+    parser.add_argument("filename", help="The CSV file to filter")
+    parser.add_argument("column", help="The column name to filter by")
+    parser.add_argument("value", help="The value to match")
 
     args = parser.parse_args()
 
-    # TODO: open args.filename and read it with csv.reader. The first row is the
-    #   header. Find the position of args.column within the header, then print every
-    #   data row (its values joined by commas) whose value in that column equals
-    #   args.value.
-
+    with open(args.filename, "r", newline="") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        
+        if args.column in header:
+            col_index = header.index(args.column)
+            for row in reader:
+                if len(row) > col_index and row[col_index] == args.value:
+                    print(",".join(row))
 
 if __name__ == "__main__":
     main()
